@@ -1,17 +1,21 @@
 import React from 'react';
 import './NavBar.css';
-import logo from '../../logo.svg';
-
+import CartWidget from './CartWidget';
+/* import Logo from '../../images/logo.png';
+ */
 const NavBar = () => {
     return (
-        <nav>
-            <img className="App-logo" width='100px' src={logo} alt="logo" />
-            <ul className='menu'>
-               <li><a href="/">Inicio</a></li>
-               <li><a href="/">Productos</a></li>
-               <li><a href="/">Login</a></li>
-            </ul>
-        </nav>
+        <header>
+           {/*  <img src={Logo} alt="" /> */}
+            <nav>
+                <ul className='menu'>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/">Productos</a></li>
+                <li><a href="/">Login</a></li>
+                <li><CartWidget /></li>
+                </ul>
+            </nav>
+        </header>
     )
 }
 
