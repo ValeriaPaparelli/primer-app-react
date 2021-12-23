@@ -1,0 +1,52 @@
+.item-detail-container {
+    display: flex;
+    justify-content: center;
+}
+
+.count-container {
+    margin-top: 40px;
+}
+
+.count-cant {
+    width: 300px;
+    background-color: white;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.button-count {
+    border: none;
+    background-color: white;
+    color: rgb(255, 0, 136);
+    font-size: 30px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.count-function {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0 25px;
+}
+
+.button-function {
+    border: none;
+    background-color: rgb(255, 0, 136);
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(252, 247, 247);
+    padding:  10px 15px;
+    border-radius: 10px;
+}
+ 
+.button-function:hover {
+    background-color: rgb(255, 59, 164);
+    cursor: pointer;
+}
