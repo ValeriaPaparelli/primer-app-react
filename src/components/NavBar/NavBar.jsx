@@ -1,12 +1,10 @@
 import React from 'react';
 import './NavBar.css';
-import CartWidget from './CartWidget';
-/* import Logo from '../../images/logo.png';
- */
+import CartWidget from '../CartWidget/CartWidget';
+
 const NavBar = () => {
     return (
         <header>
-           {/*  <img src={Logo} alt="" /> */}
             <nav>
                 <ul className='menu'>
                 <li><a href="/">Inicio</a></li>
