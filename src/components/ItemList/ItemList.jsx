@@ -1,12 +1,19 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-function ItemList({ items }) {
-    console.log('ITEM LIST - Recibiendo los productos por props:', { items });
+import './itemList.css';
+
+function ItemList({ items, setSelectedItem }) {
     return (
-        <div>
+        <div className='items'>
             { items.length 
-                ? items.map(item => <Item key={item.id} item={item} />)
+                ? items.map(item => 
+                    <Item  
+                        key={item.id} 
+                        item={item} 
+                        setSelectedItem={setSelectedItem} 
+                    />
+                )
                 : <div>Cargando ...</div>
             }
         </div>

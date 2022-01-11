@@ -1,0 +1,57 @@
+.detail-container {
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+    "detail-title detail-title"
+    "detail-img detail-description"
+    "detail-img detail-price"
+    "detail-img detail-button";
+}
+
+.detail-title {
+    grid-area: detail-title;
+    margin: 20px;
+    color: #b39864;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+.detail-img {
+    grid-area: detail-img;
+    width: 250px;
+    margin: 20px;
+}
+
+.detail-description {
+    grid-area: detail-description;
+    color: #575759;
+    margin: 10px auto;
+    line-height: 30px;
+    margin: 20px;
+}
+
+.detail-price {
+    grid-area: detail-price;
+    color: #575759;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
+}
+
+.detail-button {
+    grid-area: detail-button;
+    width: 70px;
+    height: 35px;
+    color: white;
+    background-color: #b39864;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.detail-button:hover {
+    background-color: rgb(207, 202, 176);
+}

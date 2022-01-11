@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { asyncMock } from '../../mocks/asyncMock';
+import { getProducts } from '../../mocks/asyncMock';
+import ItemDetailContainer from '../ItemDetalContainer/ItemDetailContainer';
 // import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
     const [items, setItems] = useState([]);
-    console.log('ITEMS LIST CONTAINER - Estado interno:', {items});
+    const [selectedItem, setSelectedItem] = useState(null);
+
+    useEffect(() => {}, []);
 
     useEffect(() => {
-        console.log('USE EFFECT - Yendo a buscar los productos ...');
-        asyncMock()
+        getProducts()
             .then(products => setItems(products))
             .catch(err => console.warn(err));
     }, [setItems]);
@@ -19,7 +21,18 @@ const ItemListContainer = ({ greeting }) => {
         <div>
             {/* <p>{greeting}</p> */}
             { /* <ItemCount stock={5} initial={1} /> */}
-            <ItemList items={items} />
+
+            { selectedItem ? 
+                <ItemDetailContainer 
+                    setSelectedItem={setSelectedItem} 
+                    selectedItem={selectedItem} 
+                /> : 
+                <ItemList 
+                    items={items} 
+                    setSelectedItem={setSelectedItem} 
+                /> 
+            }
+            
         </div>
     )
 }
