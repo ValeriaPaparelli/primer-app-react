@@ -5,10 +5,13 @@
 
 .count-container {
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .count-cant {
-    width: 300px;
+    width: 200px;
     background-color: white;
     padding: 5px 0;
     display: flex;
@@ -21,32 +24,25 @@
 .button-count {
     border: none;
     background-color: white;
-    color: rgb(255, 0, 136);
+    color: grey;
     font-size: 30px;
     padding: 0 15px;
     cursor: pointer;
 }
 
-.count-function {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 0 25px;
-}
-
 .button-function {
+    color: white;
+    background-color: #b39864;
     border: none;
-    background-color: rgb(255, 0, 136);
+    border-radius: 5px;
     font-size: 16px;
-    font-weight: bold;
+    cursor: pointer;
     color: rgb(252, 247, 247);
     padding:  10px 15px;
     border-radius: 10px;
+    margin-top: 15px;
 }
  
 .button-function:hover {
-    background-color: rgb(255, 59, 164);
-    cursor: pointer;
+    background-color: #c4ab7c;
 }

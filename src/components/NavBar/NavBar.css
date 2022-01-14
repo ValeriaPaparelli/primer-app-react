@@ -36,7 +36,13 @@ nav {
     font-size: 22px;
 }
 
+.menu li a:hover {
+    color: #b39864;
+}
+
 .logo {
     margin-left: 20px;
 }
+
+
 

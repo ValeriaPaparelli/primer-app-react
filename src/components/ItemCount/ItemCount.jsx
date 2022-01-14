@@ -17,10 +17,6 @@ const ItemCount = ({ stock, initial }) => {
         }
     }
 
-    const handleResetClick = () => {
-        setCount(initial);
-    }
-
     const handleAddProductClick = () => {
         if (stock > 0) {
             console.log('Producto agregado. Cantidad', count);
@@ -29,20 +25,16 @@ const ItemCount = ({ stock, initial }) => {
     }
     
     return (
-        <div className='item-detail-container'>
-            <div className='image-container'>
-                
+        <div className='count-container'>
+            <div className='count-cant'>
+                <button className='button-count' disabled={stock < 1} onClick={handleLessClick}>-</button>
+                {count} / {stock}
+                <button className='button-count' disabled={stock < 1} onClick={handleAddClick}>+</button>
             </div>
-            <div className='count-container'>
-                <div className='count-cant'>
-                    <button className='button-count' disabled={stock < 1} onClick={handleLessClick}>-</button>
-                    {count}
-                    <button className='button-count' disabled={stock < 1} onClick={handleAddClick}>+</button>
-                </div>
-                <div className='count-function'>
-                    <button className='button-function' disabled={stock < 1} onClick={handleResetClick}>Reset</button>
-                    <button className='button-function' disabled={stock < 1} onClick={handleAddProductClick}>Add</button>
-                </div>
+            <div className='count-function'>
+                <button className='button-function' disabled={stock < 1} onClick={handleAddProductClick}>
+                    Agregar Producto
+                </button>
             </div>
         </div>
     )

@@ -3,3 +3,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: rgb(241, 241, 241);
 }
+
+.loading {
+  text-align: center;
+  margin-top: 40px;
+}

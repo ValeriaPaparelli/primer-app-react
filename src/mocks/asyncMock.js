@@ -1,10 +1,17 @@
 import {products} from './products';
 
-export const getProducts = () => {
+export const getProducts = (category) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (products) {
-                resolve(products);
+            let filterProducts;
+            if(category){
+                filterProducts = products.filter(p => p.category === category);
+            } else {
+                filterProducts = products;
+            }
+            
+            if (filterProducts) {
+                resolve(filterProducts);
             } else {
                 reject('No se encontraron los productos');
             }
@@ -15,7 +22,7 @@ export const getProducts = () => {
 export const getProduct = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const product = products.find(p => p.id === id);
+            const product = products.find(p => p.id === Number(id));
             if(product) {
                 resolve(product);
             }else {

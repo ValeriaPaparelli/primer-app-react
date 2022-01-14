@@ -1,22 +1,18 @@
 import React from 'react';
 import Item from '../Item/Item';
-
 import './itemList.css';
 
-function ItemList({ items, setSelectedItem }) {
+function ItemList({ items, category }) {
+
     return (
-        <div className='items'>
-            { items.length 
-                ? items.map(item => 
-                    <Item  
-                        key={item.id} 
-                        item={item} 
-                        setSelectedItem={setSelectedItem} 
-                    />
-                )
-                : <div>Cargando ...</div>
-            }
-        </div>
+        <>
+            <h2 className='title-category'>
+                {category ? `Categoría ${category}` : 'Productos'}
+            </h2>
+            <div className='items'>
+                { items.map(item => <Item key={item.id} item={item} /> )}
+            </div>
+        </>
     )
 }
 

@@ -1,40 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getProducts } from '../../mocks/asyncMock';
-import ItemDetailContainer from '../ItemDetalContainer/ItemDetailContainer';
-// import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
-    const [selectedItem, setSelectedItem] = useState(null);
 
-    useEffect(() => {}, []);
+    const [items, setItems] = useState(null);
+
+    const {category} = useParams();
 
     useEffect(() => {
-        getProducts()
+        getProducts(category)
             .then(products => setItems(products))
             .catch(err => console.warn(err));
-    }, [setItems]);
+    }, [setItems, category]);
 
-    return (
-        <div>
-            {/* <p>{greeting}</p> */}
-            { /* <ItemCount stock={5} initial={1} /> */}
-
-            { selectedItem ? 
-                <ItemDetailContainer 
-                    setSelectedItem={setSelectedItem} 
-                    selectedItem={selectedItem} 
-                /> : 
-                <ItemList 
-                    items={items} 
-                    setSelectedItem={setSelectedItem} 
-                /> 
-            }
-            
-        </div>
-    )
+    return items ? 
+                <ItemList items={items} category={category} /> : 
+                <p className='loading'>Cargando...</p>;
 }
 
 export default ItemListContainer;

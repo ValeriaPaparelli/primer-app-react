@@ -1,12 +1,19 @@
+a {
+    text-decoration: none;
+}
+
 .detail-container {
     width: 50%;
     margin: 0 auto;
     display: grid;
     grid-template-areas: 
     "detail-title detail-title"
-    "detail-img detail-description"
-    "detail-img detail-price"
-    "detail-img detail-button";
+    "detail-img detail-description-wrapper"
+    "back-button detail-description-wrapper";
+}
+
+.detail-description-wrapper {
+    grid-area: detail-description-wrapper;
 }
 
 .detail-title {
@@ -24,7 +31,13 @@
 }
 
 .detail-description {
-    grid-area: detail-description;
+    color: #575759;
+    margin: 10px auto;
+    line-height: 30px;
+    margin: 20px;
+}
+
+.detail-stock {
     color: #575759;
     margin: 10px auto;
     line-height: 30px;
@@ -32,7 +45,6 @@
 }
 
 .detail-price {
-    grid-area: detail-price;
     color: #575759;
     font-size: 24px;
     font-weight: bold;
@@ -40,8 +52,8 @@
     margin-left: 20px;
 }
 
-.detail-button {
-    grid-area: detail-button;
+.back-button {
+    grid-area: back-button;
     width: 70px;
     height: 35px;
     color: white;
@@ -50,8 +62,27 @@
     border-radius: 5px;
     font-size: 16px;
     margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
 }
 
-.detail-button:hover {
-    background-color: rgb(207, 202, 176);
+.back-button:hover {
+    background-color: #c4ab7c;
+}
+
+.add-button {
+    width: 70px;
+    height: 35px;
+    color: white;
+    background-color: #b39864;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #c4ab7c;
 }

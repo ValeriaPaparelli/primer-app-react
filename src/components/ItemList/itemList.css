@@ -1,8 +1,17 @@
+.title-category {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 20px;
+    margin-top: 40px;
+    color: #b39864;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
 .items {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
-    justify-content: space-around;
-    margin-top: 40px;
+    width: 90%;
+    margin: 10px auto;
 }
+
