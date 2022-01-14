@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './ItemCount.css';
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
     const [count, setCount] = useState(initial);
 
     const handleAddClick = () => {
@@ -19,8 +19,9 @@ const ItemCount = ({ stock, initial }) => {
 
     const handleAddProductClick = () => {
         if (stock > 0) {
-            console.log('Producto agregado. Cantidad', count);
+            console.log('Cantidad: ', count)
             setCount(initial);
+            onAdd(count);
         }
     }
     
