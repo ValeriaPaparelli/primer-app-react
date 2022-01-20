@@ -19,7 +19,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const handleAddProductClick = () => {
         if (stock > 0) {
-            console.log('Cantidad: ', count)
             setCount(initial);
             onAdd(count);
         }
@@ -33,7 +32,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <button className='button-count' disabled={stock < 1} onClick={handleAddClick}>+</button>
             </div>
             <div className='count-function'>
-                <button className='button-function' disabled={stock < 1} onClick={handleAddProductClick}>
+                <button 
+                    className='button-function' 
+                    disabled={stock < 1} 
+                    onClick={handleAddProductClick}
+                >
                     Agregar Producto
                 </button>
             </div>
