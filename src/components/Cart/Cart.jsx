@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import './Cart.css';
 
@@ -28,7 +29,10 @@ function Cart() {
                 </div>
             </div>
 
-            : <p className='empty-cart'>El carrito está vacío</p>
+            : <div className='empty-cart-container'>
+                <p className='empty-cart'>El carrito está vacío</p>
+                <Link to='/' className='empty-cart-button'>Ver Productos</Link>
+              </div>
             }
         </>
     )
