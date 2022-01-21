@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProducts } from '../../mocks/asyncMock';
 import ItemList from '../ItemList/ItemList';
+import PuffLoader from "react-spinners/PuffLoader";
+
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
@@ -11,6 +13,7 @@ const ItemListContainer = () => {
     const {category} = useParams();
 
     useEffect(() => {
+        setItems(null);
         getProducts(category)
             .then(products => setItems(products))
             .catch(err => console.warn(err));
@@ -18,7 +21,9 @@ const ItemListContainer = () => {
 
     return items ? 
                 <ItemList items={items} category={category} /> : 
-                <p className='loading'>Cargando...</p>;
+                <div className="spinner-container">
+                    <PuffLoader color="#b39864" />;
+                </div>
 }
 
 export default ItemListContainer;
