@@ -1,40 +1,29 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
-
-import './Cart.css';
+import CartDetail from '../CartDetail/CartDetail';
+import OrderForm from '../OrderForm/OrderForm';
 
 function Cart() {
 
-    const { cartList, deleteItem, deleteCart, getTotal } = useContext(CartContext);
+    const { cartList } = useContext(CartContext);
+
+    const [showOrderForm, setShowOrderForm] = useState(false);
 
     return (
         <>
-            <h3 className='cart-title'>Carrito de compra</h3>
-
-           { cartList.length ?  
-           
-            <div>
-                {cartList.map(item => (
-                    <div key={item.product.id} className='item-containter'>
-                        <div className='item-product'>{item.product.title}</div >
-                        <div>${item.product.price}</div>
-                        <div>x{item.quantity}</div>
-                        <div>$ {item.quantity * item.product.price}</div> 
-                        <button className='item-button' onClick={() => deleteItem(item.product.id)}>X</button>
-                    </div>
-                ))}
-                <div className='total-item-containter'>
-                    <p className='total-item'><strong>Total:</strong> ${getTotal()}</p>
-                    <button className='total-item-button' onClick={deleteCart}>Vaciar</button> 
-                </div>
+            <div className="cart-header">
+                <h3 className='cart-title'>Carrito de compra</h3>
+                { cartList.length > 0 && !showOrderForm && 
+                    <button 
+                        className='confirm-button'
+                        onClick={() => setShowOrderForm(!showOrderForm)}
+                    >
+                        Confirmar orden
+                    </button> 
+                }
             </div>
-
-            : <div className='empty-cart-container'>
-                <p className='empty-cart'>El carrito está vacío</p>
-                <Link to='/' className='empty-cart-button'>Ver Productos</Link>
-              </div>
-            }
+            { !showOrderForm ? <CartDetail /> : <OrderForm setShowOrderForm={setShowOrderForm} /> }
+           
         </>
     )
 }

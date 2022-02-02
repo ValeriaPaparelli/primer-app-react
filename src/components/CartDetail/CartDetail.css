@@ -1,11 +1,17 @@
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid gray;
+    margin: 30px;
+    padding-bottom: 15px;
+}
+
 .cart-title {
     color: #b39864;
-    margin: 30px;
-    padding-bottom: 30px;
     font-family: "Playfair Display", serif;
     font-weight: 100;
-    font-size: 30px;
-    border-bottom: 0.5px solid gray;
+    font-size: 30px;    
 }
 
 .item-containter {
@@ -36,6 +42,7 @@
 .total-item-containter {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-right: 50px;
 }
 
@@ -47,15 +54,14 @@
 }
 
 .total-item-button {
-    width: 70px;
     color: white;
-    background-color: #789b75;
+    background-color: #b47a7a;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     text-decoration: none;
-    padding: 5px;
+    padding: 6px;
 }
 
 .empty-cart-container {

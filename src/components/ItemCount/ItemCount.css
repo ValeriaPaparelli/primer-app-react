@@ -32,7 +32,7 @@
 
 .button-function {
     color: white;
-    background-color: #b39864;
+    background-color: #789b75;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -44,5 +44,5 @@
 }
  
 .button-function:hover {
-    background-color: #c4ab7c;
+    background-color: #8dac8a;
 }

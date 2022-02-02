@@ -1,0 +1,75 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-form {
+    color: #594c34;
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    font-size: 30px;
+    margin: 30px;
+    text-align: center;
+}
+
+.id-form {
+    color: rgb(75, 74, 74);
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-form-input {
+    margin-bottom: 25px;
+}
+
+.form-input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #594c34;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+.confirm-button, .congrats-button, .cancel-button {
+    color: white;
+    background-color: #789b75;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.cancel-button {
+    background-color: #b47a7a;
+}
+
+.congrats-container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.congrats-id {
+    margin: 40px 0;
+}
